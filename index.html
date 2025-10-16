@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Future Educators of Poth</title>
+  <link rel="icon" type="image/png" href="TAFEFavicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  :root {
+    --primary: #004080;
+    --accent: #003366;
+    --light: #f9f9f9;
+    --text: #333;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--light);
+    color: var(--text);
+  }
+
+  /* Header */
+  header {
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  header img {
+    max-width: 140px;
+    margin-bottom: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  header p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Navigation */
+  nav {
+    background-color: var(--accent);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav a:hover {
+    background-color: var(--primary);
+  }
+
+  /* Sections */
+  section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  /* Announcements */
+  .announcement {
+    background-color: #e6f0ff;
+    border-left: 6px solid var(--primary);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  /* Link Button */
+  .link-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .link-button:hover {
+    background-color: var(--accent);
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  table th, table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  table th {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  /* Calendar iframe */
+  #calendar iframe {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Footer */
+  footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    header p {
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 0 1rem;
+    }
+  }
+
+  .sponsor-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+.sponsor-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sponsor-list li strong {
+  color: var(--primary);
+}
+
+.sponsor-list li span {
+  font-weight: bold;
+  color: #444;
+}
+
+  /* Mobile Styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    width: 90%;
+    text-align: center;
+  }
+
+  section {
+    padding: 0 1rem;
+  }
+
+  .announcement {
+    font-size: 1rem;
+  }
+
+  table {
+    font-size: 0.95rem;
+  }
+
+  iframe {
+    width: 100%;
+    height: 500px;
+  }
+
+  .link-button {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header style="padding-bottom: 1rem;">
+  <div style="background-color: white; padding: 10px; display: inline-block; border-radius: 8px; line-height: 0;">
+    <img src="https://www.tafeonline.org/assets/site/logo.png" alt="TAFE Logo" style="background-color: white; padding: 6px 10px; border-radius: 8px; display: block; margin: 0 auto;">
+  </div>
+  <h1>Future Educators of Poth</h1>
+  <p>Learn more about our program and how we serve our community</p>
+</header>
+
+
+  <nav>
+    <a href="#about">What is TAFE</a>
+    <a href="#events">Events</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#sponsorships">Sponsorships</a>
+    <a href="#officers">Officers</a>
+    <a href="#bios">Officer Bios</a>
+    <a href="#social">Social</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+      <h2>What is TAFE?</h2>
+      <p>TAFE (Texas Association of Future Educators) is a student-led organization that inspires future teachers through leadership, service, and professional development. Our chapter at Poth High School is proud to foster a supportive and active community of aspiring educators.</p>
+    </section>
+
+  <section id="events">
+    <h2>Upcoming Events</h2>
+<p>Nothing to display...</p>
+
+
+<!-- make announcements like this:
+
+    <div class="announcement">
+      Education Career Night – January 15, 6 PM in the PHS Library
+    </div>
+  
+    -->
+  </section>
+
+  <section id="calendar">
+    <h2>Chapter Calendar</h2>
+    <p>Stay up to date with our events, meetings, and deadlines using the calendar below:</p>
+    <iframe
+      src="https://calendar.google.com/calendar/embed?src=c_df80437711a38419e4542a21b02774d2eff8f85d036b0d669c751216b73b9a0b%40group.calendar.google.com&ctz=America%2FChicago"
+      style="border: 0"
+      width="100%"
+      height="600"
+      frameborder="0"
+      scrolling="no">
+    </iframe>
+  </section>
+
+  <section id="sponsorships">
+  <h2>Sponsor Us!</h2>
+  <p>We are very appreciative of any monetary or supplies donations. Anything and everything helps.</p>
+  <a class="link-button" href="https://docs.google.com/forms/d/e/1FAIpQLSeq0I5i-ds7oLJ4yWSTy4wkn1DkWr-uryZ4ogs0yPMMMCW51A/viewform?usp=header" target="_blank">Sponsor Us!</a>
+
+  <h2>Past Sponsors</h2>
+  <ul id="sponsor-list" class="sponsor-list">
+
+    <!-- add sponsor like this:
+     
+    <li data-amount="*Amount without $ *"><strong>*Donator Name*</strong>  <span>*Amount with $ *</span></li>
+
+    <li data-amount="1000"><strong>SRS Building Supplies</strong>  <span>$1,000</span></li>
+    
+    -->
+    <li data-amount="1000"><strong>SRS Building Supplies</strong>  <span>$1,000</span></li>
+  </ul>
+</section>
+
+
+
+
+  <section id="officers">
+    <h2>Officers & Committee Leaders</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Name</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Coach</td><td>Cassi Korzekwa</td></tr>
+        <tr><td>President</td><td>Taylor Whitaker</td></tr>
+        <tr><td>Vice President</td><td>Delaney Pape</td></tr>
+        <tr><td>Secretary</td><td>Kendall Gaber</td></tr>
+        <tr><td>Treasurer</td><td>Derrick Richard</td></tr>
+        <tr><td>Fundraising Committee Leader</td><td>Grace Holloway</td></tr>
+        <tr><td>Winter Formal Committee Leader</td><td>Taylon Felux</td></tr>
+        <tr><td>Social Media Officer</td><td>Delaney Pape</td></tr>
+        <tr><td>Social Media Officer</td><td>Kendall Gaber</td></tr>
+        <tr><td>TRAFLE Committee Leader</td><td>Isabella Perez</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="bios">
+  <h2>Officer Bios</h2>
+  <p>Learn more about our amazing officers and committee leaders; bios coming soon!</p>
+</section>
+
+  <section id="social">
+    <h2>Follow Us on Instagram</h2>
+    <p>See photos, updates, and behind-the-scenes moments from our chapter:</p>
+    <a class="link-button" href="https://www.instagram.com/poth_tafe?igsh=MXh0cDgwZ29rOHBkcQ%3D%3D&utm_source=qr" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+  Visit @poth_tafe on Instagram
+</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>For general inquiries, please reach out to our chapter coach:</p>
+    <p><strong>Cassi Korzekwa</strong><br>Email: <a href="mailto:ckorzekwa@pothisd.us">ckorzekwa@pothisd.us</a></p>
+  </section>
+
+  <footer>
+    2025 TAFE Program | Built By Derrick Richard
+  </footer>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const list = document.getElementById("sponsor-list");
+    const items = Array.from(list.querySelectorAll("li"));
+
+    items.sort((a, b) => {
+      const amountA = parseInt(a.dataset.amount, 10);
+      const amountB = parseInt(b.dataset.amount, 10);
+      return amountB - amountA;
+    });
+
+    items.forEach(item => list.appendChild(item));
+  });
+</script>
+</body>
+</html>
