@@ -151,6 +151,54 @@
     margin-top: 4rem;
   }
 
+  .header-container {
+  background-color: var(--primary);
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-content {
+  text-align: center;
+  flex: 1;
+}
+
+.logo-wrapper img {
+  max-width: 140px;
+  background-color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.header-logo {
+  max-width: 100px;
+  height: auto;
+}
+
+.left-logo {
+  margin-right: 1rem;
+}
+
+.right-logo {
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-logo,
+  .right-logo {
+    margin: 0.5rem 0;
+  }
+}
+
   /* Responsive */
   @media (max-width: 600px) {
     nav {
@@ -260,14 +308,19 @@
 </head>
 <body>
 
-  <header style="padding-bottom: 1rem;">
-  <div style="background-color: white; padding: 10px; display: inline-block; border-radius: 8px; line-height: 0;">
-    <img src="https://www.tafeonline.org/assets/site/logo.png" alt="TAFE Logo" style="background-color: white; padding: 6px 10px; border-radius: 8px; display: block; margin: 0 auto;">
+  <header class="header-container">
+  <img src="https://resources.finalsite.net/images/f_auto,q_auto/v1745409067/pothisdus/jvpuu0xrkmi0mgmrky5h/PothISDPrimaryThumbnailImage.png" alt="Poth Logo" class="header-logo left-logo">
+  
+  <div class="header-content">
+    <div class="logo-wrapper">
+      <img src="https://www.tafeonline.org/assets/site/logo.png" alt="TAFE Logo">
+    </div>
+    <h1>Future Educators of Poth</h1>
+    <p>Learn more about our program and how we serve our community</p>
   </div>
-  <h1>Future Educators of Poth</h1>
-  <p>Learn more about our program and how we serve our community</p>
-</header>
 
+  <img src="https://resources.finalsite.net/images/f_auto,q_auto/v1745409067/pothisdus/jvpuu0xrkmi0mgmrky5h/PothISDPrimaryThumbnailImage.png" alt="Poth Logo" class="header-logo right-logo">
+</header>
 
   <nav>
     <a href="#about">What is TAFE</a>
