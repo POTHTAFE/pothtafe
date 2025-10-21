@@ -303,10 +303,44 @@
     font-size: 1rem;
   }
 }
+body > *:not(#maintenance-overlay) {
+  display: none !important;
+}
+
+#maintenance-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 64, 128, 0.95);
+  color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.maintenance-message h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.maintenance-message p {
+  font-size: 1.2rem;
+}
 
   </style>
 </head>
 <body>
+<div id="maintenance-overlay">
+  <div class="maintenance-message">
+    <h1>Maintenance in Progress</h1>
+    <p>We're currently updating the site. Please check back soon!</p>
+  </div>
+</div>
 
   <header class="header-container">
   <img src="https://resources.finalsite.net/images/f_auto,q_auto/v1745409067/pothisdus/jvpuu0xrkmi0mgmrky5h/PothISDPrimaryThumbnailImage.png" alt="Poth Logo" class="header-logo left-logo">
