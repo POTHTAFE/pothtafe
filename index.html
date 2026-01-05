@@ -325,7 +325,7 @@
   }
 }
 
-    /* Easter Egg Styles */
+/* Hidden Easter Egg Styles */
 .heart {
   position: fixed;
   font-size: 24px;
@@ -338,9 +338,7 @@
   0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
   100% { transform: translateY(-150px) scale(1.5) rotate(20deg); opacity: 0; }
 }
-.grace-name { cursor: pointer; transition: color 0.3s; }
-.grace-name:hover { color: #ff4d6d; }
-    
+
 /*
     body > *:not(#maintenance-overlay) {
   display: none !important;
@@ -460,9 +458,6 @@
   </ul>
 </section>
 
-
-
-
   <section id="officers">
     <h2>Officers & Committee Leaders</h2>
     <table>
@@ -475,7 +470,7 @@
         <tr><td>Vice President</td><td>Delaney Pape</td></tr>
         <tr><td>Secretary</td><td>Kendall Gaber</td></tr>
         <tr><td>Treasurer</td><td>Derrick Richard</td></tr>
-        <tr><td>Fundraising Committee Leader</td><td class="grace-name" onclick="createHearts(event)">Grace Holloway</td></tr>
+        <tr><td>Fundraising Committee Leader</td><td onclick="createHearts(event)">Grace Holloway</td></tr>
         <tr><td>Winter Formal Committee Leader</td><td>Taylon Felux</td></tr>
         <tr><td>Social Media Officer</td><td>Delaney Pape</td></tr>
         <tr><td>Social Media Officer</td><td>Kendall Gaber</td></tr>
@@ -522,18 +517,18 @@
     items.forEach(item => list.appendChild(item));
   });
 
-      function createHearts(e) {
-  for (let i = 0; i < 12; i++) {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.innerHTML = '❤️';
-    heart.style.left = (e.clientX + (Math.random() - 0.5) * 60) + 'px';
-    heart.style.top = (e.clientY + (Math.random() - 0.5) * 60) + 'px';
-    heart.style.animationDelay = (Math.random() * 0.4) + 's';
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 2000);
+  function createHearts(e) {
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = (e.clientX + (Math.random() - 0.5) * 80) + 'px';
+      heart.style.top = (e.clientY + (Math.random() - 0.5) * 80) + 'px';
+      heart.style.animationDelay = (Math.random() * 0.4) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 2000);
+    }
   }
-}
 </script>
 </body>
 </html>
