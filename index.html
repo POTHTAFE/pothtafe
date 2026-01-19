@@ -527,16 +527,17 @@
     let x = e.clientX + (Math.random() - 0.5) * 80;
     let y = e.clientY + (Math.random() - 0.5) * 80;
 
-    // random drift direction
-    const vx = (Math.random() - 0.5) * 0.4;
-    const vy = (Math.random() - 0.5) * 0.4;
+    // random drift direction (stronger so movement is visible)
+    let vx = (Math.random() - 0.5) * 1.2;
+    let vy = (Math.random() - 0.5) * 1.2;
 
     // random size
     heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
 
-    // initial placement
-    heart.style.left = x + 'px';
-    heart.style.top = y + 'px';
+    // ensure CSS animations don't override movement
+    heart.style.position = "fixed";
+    heart.style.transition = "none";
+    heart.style.animation = "none";
 
     document.body.appendChild(heart);
 
@@ -545,13 +546,17 @@
       x += vx;
       y += vy;
 
-      heart.style.left = x + 'px';
-      heart.style.top = y + 'px';
+      // bounce off edges
+      if (x < 0 || x > window.innerWidth - 30) vx *= -1;
+      if (y < 0 || y > window.innerHeight - 30) vy *= -1;
+
+      heart.style.left = x + "px";
+      heart.style.top = y + "px";
 
       requestAnimationFrame(float);
     }
 
-    requestAnimationFrame(float);
+    float();
   }
 }
 
