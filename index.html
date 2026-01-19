@@ -518,17 +518,43 @@
   });
 
   function createHearts(e) {
-    for (let i = 0; i < 1500; i++) {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.innerHTML = '❤️';
-      heart.style.left = (e.clientX + (Math.random() - 0.5) * 80) + 'px';
-      heart.style.top = (e.clientY + (Math.random() - 0.5) * 80) + 'px';
-      heart.style.animationDelay = (Math.random() * 0.4) + 's';
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 200000);
+  for (let i = 0; i < 25; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️';
+
+    // starting position near click
+    let x = e.clientX + (Math.random() - 0.5) * 80;
+    let y = e.clientY + (Math.random() - 0.5) * 80;
+
+    // random drift direction
+    const vx = (Math.random() - 0.5) * 0.4;
+    const vy = (Math.random() - 0.5) * 0.4;
+
+    // random size
+    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+
+    // initial placement
+    heart.style.left = x + 'px';
+    heart.style.top = y + 'px';
+
+    document.body.appendChild(heart);
+
+    // continuous floating animation
+    function float() {
+      x += vx;
+      y += vy;
+
+      heart.style.left = x + 'px';
+      heart.style.top = y + 'px';
+
+      requestAnimationFrame(float);
     }
+
+    requestAnimationFrame(float);
   }
+}
+
 </script>
 </body>
 </html>
