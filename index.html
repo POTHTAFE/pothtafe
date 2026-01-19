@@ -524,18 +524,18 @@
     heart.innerHTML = '❤️';
 
     // starting position near click
-    let x = e.clientX + (Math.random() - 0.5) * 80;
-    let y = e.clientY + (Math.random() - 0.5) * 80;
+    let x = e.pageX + (Math.random() - 0.5) * 80;
+    let y = e.pageY + (Math.random() - 0.5) * 80;
 
-    // random drift direction (stronger so movement is visible)
+    // random drift direction
     let vx = (Math.random() - 0.5) * 1.2;
     let vy = (Math.random() - 0.5) * 1.2;
 
     // random size
     heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
 
-    // ensure CSS animations don't override movement
-    heart.style.position = "fixed";
+    // allow movement across entire document
+    heart.style.position = "absolute";
     heart.style.transition = "none";
     heart.style.animation = "none";
 
@@ -546,9 +546,12 @@
       x += vx;
       y += vy;
 
-      // bounce off edges
-      if (x < 0 || x > window.innerWidth - 30) vx *= -1;
-      if (y < 0 || y > window.innerHeight - 30) vy *= -1;
+      const maxW = document.documentElement.scrollWidth - 30;
+      const maxH = document.documentElement.scrollHeight - 30;
+
+      // bounce off full-page edges
+      if (x < 0 || x > maxW) vx *= -1;
+      if (y < 0 || y > maxH) vy *= -1;
 
       heart.style.left = x + "px";
       heart.style.top = y + "px";
