@@ -539,6 +539,10 @@
     heart.style.transition = "none";
     heart.style.animation = "none";
 
+    // prevent hearts from expanding the page
+    heart.style.contain = "layout paint size";
+    heart.style.pointerEvents = "none";
+
     document.body.appendChild(heart);
 
     // continuous floating animation
