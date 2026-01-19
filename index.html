@@ -536,8 +536,9 @@
 
     // allow movement across entire document
     heart.style.position = "absolute";
+    heart.style.transition = "none";
+    heart.style.animation = "none";
     heart.style.pointerEvents = "none";
-    heart.style.willChange = "transform";
 
     document.body.appendChild(heart);
 
@@ -546,16 +547,14 @@
       x += vx;
       y += vy;
 
-      // full document bounds
-      const maxW = document.documentElement.scrollWidth - 40;
-      const maxH = document.documentElement.scrollHeight - 40;
+      const maxW = document.documentElement.scrollWidth - 30;
+      const maxH = document.documentElement.scrollHeight - 30;
 
-      // bounce off edges
-      if (x < 0) { x = 0; vx *= -1; }
-      if (x > maxW) { x = maxW; vx *= -1; }
-      if (y < 0) { y = 0; vy *= -1; }
-      if (y > maxH) { y = maxH; vy *= -1; }
+      // bounce off full-page edges
+      if (x < 0 || x > maxW) vx *= -1;
+      if (y < 0 || y > maxH) vy *= -1;
 
+      // transform prevents layout expansion
       heart.style.transform = `translate(${x}px, ${y}px)`;
 
       requestAnimationFrame(float);
