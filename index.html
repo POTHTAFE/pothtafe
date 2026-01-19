@@ -518,51 +518,17 @@
   });
 
   function createHearts(e) {
-  for (let i = 0; i < 25; i++) {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.innerHTML = '❤️';
-
-    // starting position near click
-    let x = e.pageX + (Math.random() - 0.5) * 80;
-    let y = e.pageY + (Math.random() - 0.5) * 80;
-
-    // random drift direction
-    let vx = (Math.random() - 0.5) * 1.2;
-    let vy = (Math.random() - 0.5) * 1.2;
-
-    // random size
-    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-
-    // allow movement across entire document
-    heart.style.position = "absolute";
-    heart.style.transition = "none";
-    heart.style.animation = "none";
-    heart.style.pointerEvents = "none";
-
-    document.body.appendChild(heart);
-
-    // continuous floating animation
-    function float() {
-      x += vx;
-      y += vy;
-
-      const maxW = document.documentElement.scrollWidth - 30;
-      const maxH = document.documentElement.scrollHeight - 30;
-
-      // bounce off full-page edges
-      if (x < 0 || x > maxW) vx *= -1;
-      if (y < 0 || y > maxH) vy *= -1;
-
-      // transform prevents layout expansion
-      heart.style.transform = `translate(${x}px, ${y}px)`;
-
-      requestAnimationFrame(float);
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = (e.clientX + (Math.random() - 0.5) * 80) + 'px';
+      heart.style.top = (e.clientY + (Math.random() - 0.5) * 80) + 'px';
+      heart.style.animationDelay = (Math.random() * 0.4) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 2000);
     }
-
-    float();
   }
-}
 </script>
 </body>
 </html>
