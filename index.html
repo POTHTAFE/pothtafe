@@ -518,7 +518,7 @@
   });
 
   function createHearts(e) {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 1500; i++) {
       const heart = document.createElement('div');
       heart.className = 'heart';
       heart.innerHTML = '❤️';
@@ -526,7 +526,7 @@
       heart.style.top = (e.clientY + (Math.random() - 0.5) * 80) + 'px';
       heart.style.animationDelay = (Math.random() * 0.4) + 's';
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 2000);
+      setTimeout(() => heart.remove(), 200000);
     }
   }
 </script>
